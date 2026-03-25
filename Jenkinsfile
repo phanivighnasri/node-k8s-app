@@ -5,7 +5,7 @@ pipeline {
 
         stage('Checkout from GitHub') {
             steps {
-                git branch: 'master',
+                git branch: 'main',
                     url: 'https://github.com/phanivighnasri/node-k8s-app.git'
             }
         }
@@ -46,7 +46,7 @@ pipeline {
             steps {
                 sh '''
                 # Load latest image into Minikube
-                # minikube image load laxmi916/my-k8s-app:latest
+                # minikube image load phanivighnasri123/my-k8s-app:latest
 
                 # Apply manifests
                 minikube kubectl -- apply -f k8s/deployment.yaml
